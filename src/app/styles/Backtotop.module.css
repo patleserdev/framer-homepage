@@ -1,0 +1,60 @@
+.backtotop
+{
+    width:50px;
+    height:50px;
+    position:fixed;
+    bottom:100px;
+    right:50px;
+    z-index: 10000;
+}
+
+.backtobottom
+{
+    width:50px;
+    height:50px;
+    position:fixed;
+    bottom:50px;
+    right:50px;
+    z-index: 10000;
+}
+
+.backtobottomButton
+{
+  background-color: black;
+  padding: 10px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    z-index: 10000;
+    cursor: pointer;
+    color:#fff;
+}
+
+.backtotopButton
+{
+  background-color: black;
+  padding: 10px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    z-index: 10000;
+    cursor: pointer;
+    color:#fff;
+}
+
+.backtotopButton:hover
+{
+  transform: scale(1.2);
+}
+
+@media (max-width: 800px) 
+{
+  .backtotop
+  {
+     
+      right:0px;
+      
+  }
+}

@@ -6,6 +6,7 @@ import { useState } from "react";
 import AnimateBgSection from "./AnimateBgSection";
 import InfiniteScrollImages from "./InfiniteScrollImages";
 import ParallaxText from "./ParralaxText";
+import ScrollButton from "./Scrollbutton";
 export default function HomeComponent() {
   const [backgroundColor, setBackgroundColor] = useState("#000000"); // noir par défaut
   const [textColor, setTextColor] = useState("#fff"); // noir par défaut
@@ -56,6 +57,7 @@ export default function HomeComponent() {
 
   return (
     <AnimateBgSection backgroundColor={backgroundColor}>
+      <ScrollButton direction="top"/>
       <motion.header
         viewport={{ amount: 0.3 }}
         onViewportEnter={() => {
@@ -89,8 +91,8 @@ export default function HomeComponent() {
 
      
         </div>
-        <nav className="md:h-[100%] ">
-            <ul className="flex flex-col md:flex-row md:w-[100%] md:h-[100%] md:items-end md:justify-start md:py-20 md:gap-10 md:px-10  border">
+        <nav className="">
+            <ul className=" flex flex-row md:w-[100%]  md:items-end md:justify-end p-3 ">
               <li>
                 <a
                   className="text-lg font-bold w-50 text-center hover:bg-slate-800 transition-all p-2 rounded"
@@ -310,7 +312,7 @@ export default function HomeComponent() {
           id="contact"
           className="contact md:h-[90vh] flex flex-col md:flex-row items-start md:items-center md:justify-between md:mt-5 md:p-5 w-[100%] md:border rounded-lg"
         >
-          <div className="flex flex-col md:flex-row items-start justify-start md:items-center justify-center md:w-[50%]">
+          <div className="flex flex-col  items-start justify-start md:items-center justify-center md:w-[50%]">
             <div className="container flex flex-col md:align-center align-start md:justify-center justify-start md:gap-10 md:px-20 md:mb-5 p-2 mb-2">
               <div>
                 <h2 className="text-3xl" style={{ color: textColor }}>
