@@ -21,6 +21,7 @@ const LexendRegular = Lexend({
 
 const KanitRegular = Kanit({
   variable: "--font-kanit",
+  subsets: ["latin"],
   weight:"500"
 });
 
