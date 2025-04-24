@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Kanit, Lexend } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +10,18 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const LexendRegular = Lexend({
+  variable: "--font-lexend",
+  subsets: ["latin"],
+  weight:"500"
+});
+
+
+const KanitRegular = Kanit({
+  variable: "--font-kanit",
+  weight:"500"
 });
 
 export const metadata: Metadata = {
@@ -25,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${KanitRegular.variable} ${LexendRegular.variable} antialiased`}
       >
         {children}
       </body>

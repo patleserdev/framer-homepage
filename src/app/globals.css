@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
+
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-lexend: var(--font-lexend);
+  --font-kanit: var(--font-kanit);
 }
 
 @theme inline {
@@ -10,6 +15,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +26,58 @@
   }
 }
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-kanit);
+}
+
+p {
+  font-family: var(--font-lexend)
+}
+
+;
+
+.shadowbordered::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 200px;
+  top: 0;
+  left: 0;
+  background: var(--scrollcolor);
+  background: linear-gradient(90deg, var(--scrollcolor), rgba(252, 252, 252, 0) 100%);
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.shadowbordered::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 200px;
+  top: 0;
+  right: 0;
+  background: var(--scrollcolor);
+  background: linear-gradient(270deg, var(--scrollcolor), rgba(252, 252, 252, 0) 100%);
+  z-index: 10;
+  border-radius: 5px;
 }
