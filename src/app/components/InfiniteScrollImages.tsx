@@ -18,11 +18,12 @@ export default function InfiniteScrollImages({
 
   return (
     <div
-      className="overflow-hidden w-full relative shadowbordered mb-5"
-      style={{ "--scrollcolor": bgcolor } as React.CSSProperties}
-    >
+            className="overflow-hidden h-[50vh] w-full relative shadowbordered"
+            style={{ "--scrollcolor":   bgcolor,
+            } as React.CSSProperties}
+          >
       <motion.div
-        className="flex gap-6 w-max"
+        className="flex gap-6 w-max overflow-hidden h-full mt-5 "
         animate={{ x: ["0%", "-50%"] }} // seulement la moitié, car images doublées
         transition={{ duration: 100, ease: "linear", repeat: Infinity }}
       >
@@ -37,7 +38,6 @@ export default function InfiniteScrollImages({
             className="shrink-0 object-cover md:object-contain"
           />
         ))}
-      </motion.div>
-    </div>
+      </motion.div></div>
   );
 }

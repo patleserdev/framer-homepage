@@ -7,57 +7,23 @@ import AnimateBgSection from "./AnimateBgSection";
 import InfiniteScrollImages from "./InfiniteScrollImages";
 import ParallaxText from "./ParralaxText";
 import ScrollButton from "./Scrollbutton";
+import SplitText from "./SplitText";
+import EnterCard from "./EnterCard";
+import TestimonialsSlider from "./TestimonialSlider";
+import Navbar from "./Navbar";
+
+import testimonialDatas from "../datas/testimonialdatas";
+import pictures from "../datas/carouselpictures";
+import realisations from "../datas/realisations";
+import services from "../datas/services";
 export default function HomeComponent() {
   const [backgroundColor, setBackgroundColor] = useState("#000000"); // noir par défaut
   const [textColor, setTextColor] = useState("#fff"); // noir par défaut
   const [borderColor, setBorderColor] = useState("#fff"); // noir par défaut
 
-  const pictures = [
-    {
-      url: "/assets/pictures/pexels-cottonbro-4621567.jpg",
-      width: 400,
-      height: 150,
-    },
-    {
-      url: "/assets/pictures/pexels-cottonbro-6583373.jpg",
-      width: 400,
-      height: 200,
-    },
-    {
-      url: "/assets/pictures/pexels-designecologist-1779487.jpg",
-      width: 500,
-      height: 900,
-    },
-    {
-      url: "/assets/pictures/pexels-leeloothefirst-7598017.jpg",
-      width: 600,
-      height: 900,
-    },
-    {
-      url: "/assets/pictures/pexels-pixabay-39284.jpg",
-      width: 500,
-      height: 900,
-    },
-    {
-      url: "/assets/pictures/pexels-ron-lach-9849319.jpg",
-      width: 300,
-      height: 200,
-    },
-    {
-      url: "/assets/pictures/pexels-thisisengineering-3862365.jpg",
-      width: 400,
-      height: 400,
-    },
-    {
-      url: "/assets/pictures/pexels-thisisengineering-3862372.jpg",
-      width: 300,
-      height: 300,
-    },
-  ];
-
   return (
     <AnimateBgSection backgroundColor={backgroundColor}>
-      <ScrollButton direction="top"/>
+      <ScrollButton direction="top" />
       <motion.header
         viewport={{ amount: 0.3 }}
         onViewportEnter={() => {
@@ -65,63 +31,32 @@ export default function HomeComponent() {
           // setTextColor("#ffffff");
           // setBorderColor("#ffffff");
         }}
-        className="header md:w-[100%] md:h-[90vh] md:px-5 md:pt-5 md:mb-10"
+        className="header md:w-[100%]  md:px-5 md:pt-5 "
       >
         <div
           style={{
             borderColor: borderColor,
-            backgroundImage:
-              "url(./Leonardo_Phoenix_09_A_vibrant_multicolored_banner_with_a_bold_2.jpg)",
-            backgroundRepeat: "no-repeat",
+            // backgroundImage:
+            //   "url(./Leonardo_Phoenix_09_A_vibrant_multicolored_banner_with_a_bold_2.jpg)",
+            // backgroundRepeat: "no-repeat",
             //backgroundSize: "cover",
             //backgroundPosition: "center",
           }}
           className="
-          md:w-[100%] h-[30vh] md:h-full md:px-5 bg-top md:bg-center bg-contain md:bg-cover
-          md:border rounded flex flex-row 
+          md:w-[100%] p-4 md:h-full md:px-5 bg-top md:bg-center bg-contain md:bg-cover
+          flex flex-row 
           md:justify-between md:items-center 
           justify-start items-start"
         >
           <h1
-            className={`font-kanit md:text-7xl`}
-            style={{ color: textColor, opacity: 0 }}
+            className={`font-kanit text-4xl md:text-7xl text-center relative text-shadow-xs`}
+            style={{ color: textColor, opacity: 1 }}
           >
-            Bienvenue sur Mon Site
-          </h1>
+           Framer Design
 
-     
+          </h1>
         </div>
-        <nav className="">
-            <ul className=" flex flex-row md:w-[100%]  md:items-end md:justify-end p-3 ">
-              <li>
-                <a
-                  className="text-lg font-bold w-50 text-center hover:bg-slate-800 transition-all p-2 rounded"
-                  href="#a-propos"
-                  style={{ color: textColor }}
-                >
-                  À propos
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-lg font-bold w-50 text-center hover:bg-slate-800 transition-all p-2 rounded"
-                  href="#services"
-                  style={{ color: textColor }}
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-lg font-bold w-50 text-center hover:bg-slate-800 transition-all p-2 rounded"
-                  href="#contact"
-                  style={{ color: textColor }}
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
+        <Navbar textColor={textColor} />
       </motion.header>
 
       <div className=" flex flex-col gap-10 px-5">
@@ -135,7 +70,7 @@ export default function HomeComponent() {
           className="hero md:h-[90vh] flex flex-col items-center md:items-start md:justify-center md:mt-2 md:mt-5 md:p-5 w-[100%] md:border rounded-lg"
           style={{ borderColor: borderColor }}
         >
-          <div className="container md:w-[50%] h-[20vh] flex flex-col items-start justify-center px-5 md:px-20 md:gap-10">
+          <div className="container md:w-[50%] flex flex-col items-start justify-center md:px-20 md:gap-10">
             <h2 className="text-3xl md:mb-3" style={{ color: textColor }}>
               Votre solution web sur-mesure
             </h2>
@@ -155,11 +90,11 @@ export default function HomeComponent() {
           }}
           viewport={{ amount: 0.3 }}
           id="a-propos"
-          className="about md:h-[90vh] flex flex-col items-center justify-center md:mt-5 md:p-5 w-[100%] md:border rounded-lg"
+          className="about  flex flex-col items-center justify-center md:mt-5 md:p-5 w-[100%] md:border rounded-lg"
           style={{ borderColor: borderColor }}
         >
-          <div className="flex flex-col md:flex-row w-[100%] h-[100%]">
-            <div className="container md:w-[50%] h-[100%] flex flex-col align-center justify-center md:gap-10 p-2 px-3 md:px-20">
+          <div className="flex flex-col md:flex-row w-[100%] h-[100vh]">
+            <div className="container md:w-[50%] h-[100%] flex flex-col align-center justify-center md:gap-10 p-2 px-2 md:px-10">
               <h2 className="text-3xl mb-3" style={{ color: textColor }}>
                 À propos de nous
               </h2>
@@ -192,7 +127,7 @@ export default function HomeComponent() {
               </a>
             </div>
 
-            <div className="md:w-[50%] h-[30vh] md:h-[100%] relative">
+            <div className="md:w-[50%] h-[40vh] md:h-[100%] flex flex-col align-center justify-center  relative">
               <Image
                 src={"/assets/pictures/pexels-fauxels-3183150.jpg"}
                 layout={"fill"}
@@ -221,64 +156,94 @@ export default function HomeComponent() {
           id="services"
           className="services md:mt-5 md:h-[90vh] flex flex-col items-start justify-start md:justify-center md:p-5 w-[100%] md:border rounded-lg"
         >
-          <div className="container w-[50%] flex flex-col align-center justify-center md:gap-10 md:px-20 md:mb-5 p-2">
+          <div className="container w-[50%] flex flex-col align-center justify-center md:gap-10 md:px-10 md:mb-5 p-2">
             <h2 className="text-3xl mb-5" style={{ color: textColor }}>
               Nos services
             </h2>
           </div>
 
           <div className="service-grid flex flex-col md:flex-row align-center justify-around w-[100%] pb-5">
-            <div className="service border h-100 m-2 md:w-100 pb-5 p-2 flex flex-col items-center justify-around gap-5 rounded shadow-xl">
-              <h3 className="px-5 text-2xl" style={{ color: textColor }}>
-                Développement
-              </h3>
-              <p style={{ color: textColor }}>
-                Sites web modernes et performants.
-              </p>
+            {services.map((service,i) => {
+              return (
+                <div key={i} className="service border h-100 m-2 md:w-100 pb-5 p-2 flex flex-col items-center justify-around gap-5 rounded shadow-xl">
+                  <h3 className="px-5 text-2xl" style={{ color: textColor }}>
+                    {service.title}
+                  </h3>
+                  <p style={{ color: textColor }}>
+                  {service.content}
+                  </p>
 
-              <Image
-                src={"/assets/icons/optimisation-des-pages.gif"}
-                width={200}
-                height={200}
-                alt="icon"
-                unoptimized
-              />
-            </div>
-
-            <div className="service border h-100 m-2 md:w-100 pb-5 p-2 flex flex-col items-center justify-around gap-5 rounded shadow-xl">
-              <h3 className="px-5 text-2xl" style={{ color: textColor }}>
-                Design UX/UI
-              </h3>
-              <p style={{ color: textColor }}>
-                Interfaces intuitives et attractives.
-              </p>
-
-              <Image
-                src={"/assets/icons/engagement.gif"}
-                width={200}
-                height={200}
-                alt="icon"
-                unoptimized
-              />
-            </div>
-
-            <div className="service border h-100 m-2 md:w-100 pb-5 p-2 flex flex-col items-center justify-around gap-5 rounded shadow-xl">
-              <h3 className="px-5 text-2xl" style={{ color: textColor }}>
-                SEO
-              </h3>
-              <p style={{ color: textColor }}>
-                Optimisation pour les moteurs de recherche.
-              </p>
-
-              <Image
-                src={"/assets/icons/referencement.gif"}
-                width={200}
-                height={200}
-                alt="icon"
-                unoptimized
-              />
-            </div>
+                  <Image
+                    src={`/assets/icons/${service.picture}`}
+                    width={200}
+                    height={200}
+                    alt="icon"
+                    unoptimized
+                  />
+                </div>
+              );
+            })}
           </div>
+        </motion.section>
+
+        <motion.section
+          onViewportEnter={() => {
+            setBackgroundColor("#F45D01");
+            setTextColor("#ffffff");
+            setBorderColor("#ffffff");
+          }}
+          viewport={{ amount: 0.3 }}
+          style={{ borderColor: borderColor }}
+          id="realisations"
+          className="realisations md:mt-5 md:h-[90vh] flex flex-col items-start justify-start md:justify-center md:p-5 w-[100%] md:border rounded-lg"
+        >
+          <div className="container w-[50%] flex flex-col align-center justify-center md:gap-10 md:px-10 md:mb-5 p-2">
+            <h2 className="text-3xl mb-5" style={{ color: textColor }}>
+              Nos réalisations
+            </h2>
+          </div>
+
+          <div
+            className="flex flex-col 
+          md:flex-row md:justify-around md:self-center 
+          lg:flex-row lg:gap-10
+          lg:w-[80%]
+          overflow-hidden"
+          >
+            {realisations.map((realisation, i) => {
+              return (
+                <EnterCard
+                  key={realisation.item}
+                  item={realisation.item}
+                  title={realisation.title}
+                  content={realisation.content}
+                  picture={realisation.picture}
+                  color={backgroundColor}
+                  backgroundColor={textColor}
+                />
+              );
+            })}
+          </div>
+        </motion.section>
+
+        <motion.section
+          onViewportEnter={() => {
+            setBackgroundColor("#F45D01");
+            setTextColor("#ffffff");
+            setBorderColor("#ffffff");
+          }}
+          viewport={{ amount: 0.3 }}
+          style={{ borderColor: borderColor }}
+          id="realisations"
+          className="realisations md:mt-5 flex flex-col items-start justify-start md:justify-center md:p-5 w-[100%] md:border rounded-lg"
+        >
+          <div className="container w-[100%] h-[20%] flex flex-col align-center justify-center md:gap-10 md:px-20 md:mb-5 p-2">
+            <h2 className="text-3xl mb-5" style={{ color: textColor }}>
+              Témoignages
+            </h2>
+          </div>
+
+          <TestimonialsSlider datas={testimonialDatas} />
         </motion.section>
 
         {/**<motion.section
@@ -391,9 +356,15 @@ export default function HomeComponent() {
               >
                 Me contacter
               </a>
-             <div className="opacity-0 md:opacity-1"><p>|</p></div> 
-              <p className="font-bold self-center text-center" style={{ color: textColor }}>
-                &copy; My Animated Website. Tous droits réservés.
+              <div className="opacity-0 md:opacity-1">
+                <p>|</p>
+              </div>
+              <p
+                className="font-bold self-center text-center"
+                style={{ color: textColor }}
+              >
+                &copy; My Animated Website. Tous droits réservés. | Site de test
+                !
               </p>
             </div>
           </footer>
