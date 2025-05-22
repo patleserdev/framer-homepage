@@ -47,7 +47,7 @@ export default function PageWrapper({ children }: { children: React.ReactNode })
               opacity: 1,
             }}
             animate={{
-              scale: 16,
+              scale: 20,
               borderRadius: "0%",
               transition: {
                 duration: 0.2,
